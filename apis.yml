@@ -1,0 +1,185 @@
+aid: cloudflare-ai-gateway
+name: Cloudflare AI Gateway
+description: Cloudflare AI Gateway is a managed LLM proxy that sits in front of 23+ AI providers (OpenAI, Anthropic, Google
+  AI Studio, Google Vertex AI, Amazon Bedrock, Azure OpenAI, Workers AI, Mistral, Cohere, Groq, DeepSeek, Cerebras, xAI, Perplexity,
+  Replicate, HuggingFace, OpenRouter, ElevenLabs, Deepgram, Cartesia, Ideogram, Fal AI, Baseten, Parallel) and provides analytics,
+  request and error logging, response caching, rate limiting, request retries, model fallback, guardrails, and evaluations.
+  A unified REST API launched May 21, 2026 lets developers call any model through a single endpoint. The gateway integrates
+  with Workers AI, the Secrets Store, and Cloudflare CASB's Claude Compliance API support. This is a standalone product profile;
+  the broader Cloudflare provider profile lives at github.com/api-evangelist/cloudflare.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+- AI Gateway
+- LLM
+- Observability
+- Caching
+- Rate Limiting
+- Workers AI
+- Cloudflare
+url: https://raw.githubusercontent.com/api-evangelist/cloudflare-ai-gateway/refs/heads/main/apis.yml
+created: '2026-05-23'
+modified: '2026-05-23'
+specificationVersion: '0.19'
+apis:
+- aid: cloudflare-ai-gateway:cloudflare-ai-gateway-proxy
+  name: Cloudflare AI Gateway Proxy
+  description: The AI Gateway proxy endpoint accepts requests in each provider's native API format and forwards them through
+    Cloudflare's edge with analytics, caching, retries, rate limiting, fallback, and guardrails applied. URL pattern is https://gateway.ai.cloudflare.com/v1/{account_id}/{gateway_id}/{provider}.
+    Authentication uses a Cloudflare API token with AI Gateway Read/Edit and Workers AI Read permissions; provider credentials
+    can be sent as headers (BYOK) or stored via Unified Billing.
+  humanURL: https://developers.cloudflare.com/ai-gateway/
+  baseURL: https://gateway.ai.cloudflare.com
+  tags:
+  - LLM Proxy
+  - REST API
+  - Multi-Provider
+  properties:
+  - type: Documentation
+    url: https://developers.cloudflare.com/ai-gateway/
+  - type: GettingStarted
+    url: https://developers.cloudflare.com/ai-gateway/get-started/
+  - type: APIReference
+    url: https://developers.cloudflare.com/ai-gateway/usage/providers/
+  - type: Authentication
+    url: https://developers.cloudflare.com/ai-gateway/get-started/
+- aid: cloudflare-ai-gateway:cloudflare-ai-gateway-unified-api
+  name: Cloudflare AI Gateway Unified REST API
+  description: Unified REST API launched May 21, 2026 that lets developers call any supported model through a single endpoint
+    instead of formatting requests for each provider individually. Sits alongside the provider-native proxy mode and uses
+    the same gateway routing, caching, observability, and guardrails.
+  humanURL: https://developers.cloudflare.com/ai-gateway/
+  baseURL: https://gateway.ai.cloudflare.com
+  tags:
+  - Unified API
+  - LLM
+  - Multi-Provider
+  properties:
+  - type: Documentation
+    url: https://developers.cloudflare.com/ai-gateway/
+  - type: APIReference
+    url: https://developers.cloudflare.com/ai-gateway/usage/providers/
+- aid: cloudflare-ai-gateway-management-api
+  name: Cloudflare AI Gateway Management API
+  description: The Cloudflare API surface for managing AI Gateway resources — creating gateways, listing them, retrieving
+    request logs, and configuring caching, rate limiting, and authentication. Exposed under the standard Cloudflare REST API
+    at api.cloudflare.com.
+  humanURL: https://developers.cloudflare.com/api/resources/ai_gateway/
+  baseURL: https://api.cloudflare.com
+  tags:
+  - Management API
+  - REST API
+  - Configuration
+  properties:
+  - type: Documentation
+    url: https://developers.cloudflare.com/api/resources/ai_gateway/
+  - type: APIReference
+    url: https://developers.cloudflare.com/api/resources/ai_gateway/
+- aid: cloudflare-ai-gateway:ai-gateway-mcp
+  name: AI Gateway MCP Server
+  description: Cloudflare-hosted remote MCP server that exposes AI Gateway control-plane operations to MCP-compatible AI agents.
+  humanURL: https://ai-gateway.mcp.cloudflare.com/mcp
+  tags:
+  - MCP
+  - Agentic AI
+  properties:
+  - type: MCPServer
+    url: https://ai-gateway.mcp.cloudflare.com/mcp
+common:
+- type: Portal
+  url: https://developers.cloudflare.com/ai-gateway/
+- type: Documentation
+  url: https://developers.cloudflare.com/ai-gateway/
+- type: GettingStarted
+  url: https://developers.cloudflare.com/ai-gateway/get-started/
+- type: APIReference
+  url: https://developers.cloudflare.com/ai-gateway/usage/providers/
+- type: Authentication
+  url: https://developers.cloudflare.com/fundamentals/api/get-started/create-token/
+- type: ChangeLog
+  url: https://developers.cloudflare.com/changelog/
+- type: Blog
+  url: https://blog.cloudflare.com/
+- type: SignUp
+  url: https://dash.cloudflare.com/sign-up
+- type: Console
+  url: https://dash.cloudflare.com/
+- type: Pricing
+  url: https://www.cloudflare.com/plans/
+- type: SDK
+  url: https://github.com/cloudflare/cloudflare-typescript
+  name: Cloudflare TypeScript SDK
+- type: SDK
+  url: https://github.com/cloudflare/cloudflare-python
+  name: Cloudflare Python SDK
+- type: SDK
+  url: https://github.com/cloudflare/cloudflare-go
+  name: Cloudflare Go SDK
+- type: CLI
+  url: https://developers.cloudflare.com/workers/wrangler/
+  name: Wrangler CLI
+- type: MCPServer
+  url: https://ai-gateway.mcp.cloudflare.com/mcp
+  name: AI Gateway MCP Server
+- type: GitHubOrganization
+  url: https://github.com/cloudflare
+- type: StatusPage
+  url: https://www.cloudflarestatus.com/
+- type: Support
+  url: https://support.cloudflare.com/
+- type: Features
+  data:
+  - name: 23+ Provider Coverage
+    description: OpenAI, Anthropic, Google AI Studio, Google Vertex AI, Amazon Bedrock, Azure OpenAI, Workers AI, Mistral,
+      Cohere, Groq, DeepSeek, Cerebras, xAI, Perplexity, Replicate, HuggingFace, OpenRouter, ElevenLabs, Deepgram, Cartesia,
+      Ideogram, Fal AI, Baseten, Parallel.
+  - name: Unified REST API
+    description: Single endpoint that can call any supported model (launched May 21, 2026), alongside provider-native pass-through
+      mode.
+  - name: Analytics and Logging
+    description: Per-request analytics for tokens, cost, latency, and error rates with full request and response logging.
+  - name: Edge Caching
+    description: Cache LLM responses at Cloudflare's edge to cut latency and provider spend.
+  - name: Rate Limiting
+    description: Enforce request and token rate limits per gateway, per application.
+  - name: Retries and Model Fallback
+    description: Automatically retry failing calls and fall back to alternate models or providers.
+  - name: Guardrails and Evaluations
+    description: Apply guardrails to prompts and responses and run evaluations against captured traffic.
+  - name: BYOK and Unified Billing
+    description: Bring your own provider keys per gateway or route spend through Cloudflare's Unified Billing.
+  - name: Workers AI Integration
+    description: Native integration with Cloudflare Workers AI models via the cf-aig-gateway-id header.
+  - name: Secrets Store Integration
+    description: Provider keys can be sourced from Cloudflare's Secrets Store rather than embedded in client code.
+- type: UseCases
+  data:
+  - name: Observe LLM Traffic
+    description: Capture per-request tokens, latency, and cost across every provider in one place.
+  - name: Cut LLM Costs
+    description: Cache repeated responses at the edge and rate limit runaway workloads.
+  - name: Fail Over Between Providers
+    description: Configure retries and model fallback so a single provider outage does not take down the app.
+  - name: Govern Prompts and Responses
+    description: Apply guardrails and run evaluations against production AI traffic.
+  - name: Unify Multi-Provider Access
+    description: Use a single REST endpoint to address any supported model from any provider.
+- type: Integrations
+  data:
+  - name: Workers AI
+    description: First-class integration with Cloudflare Workers AI inference catalog.
+  - name: Cloudflare Workers
+    description: Call AI Gateway directly from Workers using AI bindings configured in wrangler.jsonc.
+  - name: Cloudflare Secrets Store
+    description: Store and rotate provider API keys without redeploying.
+  - name: Cloudflare CASB - Claude Compliance API
+    description: CASB support for Anthropic's Claude Compliance API announced May 2026.
+  - name: Claude Managed Agents on Cloudflare
+    description: Partnership offering announced May 19, 2026 that runs Anthropic-managed Claude agents on Cloudflare with
+      AI Gateway in the path.
+  - name: MCP Server
+    description: Remote MCP server at ai-gateway.mcp.cloudflare.com/mcp for AI agent access to AI Gateway control plane.
+maintainers:
+- FN: Kin Lane
+  url: http://apievangelist.com
+  email: kin@apievangelist.com
