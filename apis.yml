@@ -179,6 +179,8 @@ common:
       AI Gateway in the path.
   - name: MCP Server
     description: Remote MCP server at ai-gateway.mcp.cloudflare.com/mcp for AI agent access to AI Gateway control plane.
+- type: LLMsTxt
+  url: https://developers.cloudflare.com/llms.txt
 maintainers:
 - FN: Kin Lane
   url: http://apievangelist.com
