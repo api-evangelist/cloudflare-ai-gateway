@@ -2,13 +2,27 @@
   "repo": "cloudflare-ai-gateway",
   "feeds": [
     {
+      "source": "https://blog.cloudflare.com/rss/",
+      "feed_url": "https://blog.cloudflare.com/rss/",
+      "title": "",
+      "saved": 4,
+      "method": "feed"
+    },
+    {
+      "source": "https://developers.cloudflare.com/changelog/rss/index.xml",
+      "feed_url": "https://developers.cloudflare.com/changelog/rss/index.xml",
+      "title": "",
+      "saved": 19,
+      "method": "feed"
+    },
+    {
       "source": "https://developers.cloudflare.com/changelog/",
       "feed_url": "https://developers.cloudflare.com/changelog/rss.xml",
       "title": "",
-      "saved": 22,
+      "saved": 0,
       "method": "discovered"
     }
   ],
-  "post_count": 22,
-  "fetched": "2026-06-01T23:35:02Z"
+  "post_count": 47,
+  "fetched": "2026-06-14T20:42:17Z"
 }
