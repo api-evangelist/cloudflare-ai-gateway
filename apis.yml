@@ -100,19 +100,19 @@ common:
   url: https://developers.cloudflare.com/changelog/
 - type: Blog
   url: https://blog.cloudflare.com/
-- type: SignUp
+- type: Signup
   url: https://dash.cloudflare.com/sign-up
 - type: Console
   url: https://dash.cloudflare.com/
 - type: Pricing
   url: https://www.cloudflare.com/plans/
-- type: SDK
+- type: SDKs
   url: https://github.com/cloudflare/cloudflare-typescript
   name: Cloudflare TypeScript SDK
-- type: SDK
+- type: SDKs
   url: https://github.com/cloudflare/cloudflare-python
   name: Cloudflare Python SDK
-- type: SDK
+- type: SDKs
   url: https://github.com/cloudflare/cloudflare-go
   name: Cloudflare Go SDK
 - type: CLI
@@ -179,7 +179,7 @@ common:
       AI Gateway in the path.
   - name: MCP Server
     description: Remote MCP server at ai-gateway.mcp.cloudflare.com/mcp for AI agent access to AI Gateway control plane.
-- type: LLMsTxt
+- type: LlmsText
   url: https://developers.cloudflare.com/llms.txt
 maintainers:
 - FN: Kin Lane
