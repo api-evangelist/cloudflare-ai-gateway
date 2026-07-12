@@ -1,0 +1,15 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/cloudflare-ai-gateway-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  description: |-
+    Cloudflare API token with AI Gateway Read/Edit (and Workers AI Read
+    when applicable) permissions, passed as `Authorization: Bearer <token>`.
+  sources:
+  - openapi/cloudflare-ai-gateway-openapi.yml

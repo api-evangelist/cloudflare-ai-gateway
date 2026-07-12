@@ -86,6 +86,12 @@ apis:
   - type: MCPServer
     url: https://ai-gateway.mcp.cloudflare.com/mcp
 common:
+- type: VulnerabilityDisclosure
+  url: security/cloudflare-ai-gateway-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/cloudflare-ai-gateway-domain-security.yml
+- type: Authentication
+  url: authentication/cloudflare-ai-gateway-authentication.yml
 - type: Portal
   url: https://developers.cloudflare.com/ai-gateway/
 - type: Documentation
