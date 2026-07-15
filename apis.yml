@@ -86,6 +86,8 @@ apis:
   - type: MCPServer
     url: https://ai-gateway.mcp.cloudflare.com/mcp
 common:
+- type: AgenticAccess
+  url: agentic-access/cloudflare-ai-gateway-agentic-access.yml
 - type: VulnerabilityDisclosure
   url: security/cloudflare-ai-gateway-vulnerability-disclosure.yml
 - type: DomainSecurity
