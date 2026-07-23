@@ -1,0 +1,143 @@
+openapi: 3.1.0
+info:
+  title: Cloudflare AI Gateway Gateways API
+  description: 'Best-effort OpenAPI 3.1 description of Cloudflare AI Gateway, covering
+
+    the unified provider proxy endpoint at gateway.ai.cloudflare.com and the
+
+    management plane under api.cloudflare.com/client/v4/accounts/{account_id}/ai-gateway.
+
+    The proxy forwards LLM calls in each provider''s native format and applies
+
+    analytics, caching, rate limiting, retries, fallback, and guardrails. The
+
+    management API lists, creates, updates, and deletes gateways and reads
+
+    request logs.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Cloudflare AI Gateway
+    url: https://developers.cloudflare.com/ai-gateway/
+servers:
+- url: https://api.cloudflare.com/client/v4
+  description: Cloudflare REST API (management plane)
+- url: https://gateway.ai.cloudflare.com
+  description: AI Gateway proxy plane
+security:
+- bearerAuth: []
+tags:
+- name: Gateways
+paths:
+  /accounts/{account_id}/ai-gateway/gateways:
+    parameters:
+    - $ref: '#/components/parameters/AccountId'
+    get:
+      summary: List AI Gateways
+      operationId: listAiGateways
+      tags:
+      - Gateways
+      parameters:
+      - in: query
+        name: page
+        schema:
+          type: integer
+      - in: query
+        name: per_page
+        schema:
+          type: integer
+      - in: query
+        name: search
+        schema:
+          type: string
+      responses:
+        '200':
+          description: List of gateways
+    post:
+      summary: Create AI Gateway
+      operationId: createAiGateway
+      tags:
+      - Gateways
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - id
+              properties:
+                id:
+                  type: string
+                cache_ttl:
+                  type: integer
+                cache_invalidate_on_update:
+                  type: boolean
+                collect_logs:
+                  type: boolean
+                rate_limiting_interval:
+                  type: integer
+                rate_limiting_limit:
+                  type: integer
+                rate_limiting_technique:
+                  type: string
+                  enum:
+                  - fixed
+                  - sliding
+                authentication:
+                  type: boolean
+      responses:
+        '200':
+          description: Gateway created
+  /accounts/{account_id}/ai-gateway/gateways/{gateway_id}:
+    parameters:
+    - $ref: '#/components/parameters/AccountId'
+    - $ref: '#/components/parameters/GatewayId'
+    get:
+      summary: Get AI Gateway
+      operationId: getAiGateway
+      tags:
+      - Gateways
+      responses:
+        '200':
+          description: Gateway details
+    put:
+      summary: Update AI Gateway
+      operationId: updateAiGateway
+      tags:
+      - Gateways
+      responses:
+        '200':
+          description: Gateway updated
+    delete:
+      summary: Delete AI Gateway
+      operationId: deleteAiGateway
+      tags:
+      - Gateways
+      responses:
+        '200':
+          description: Gateway deleted
+components:
+  parameters:
+    GatewayId:
+      in: path
+      name: gateway_id
+      required: true
+      schema:
+        type: string
+    AccountId:
+      in: path
+      name: account_id
+      required: true
+      schema:
+        type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'Cloudflare API token with AI Gateway Read/Edit (and Workers AI Read
+
+        when applicable) permissions, passed as `Authorization: Bearer <token>`.
+
+        '

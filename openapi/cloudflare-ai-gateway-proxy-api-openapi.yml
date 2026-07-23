@@ -1,0 +1,121 @@
+openapi: 3.1.0
+info:
+  title: Cloudflare AI Gateway Gateways Proxy API
+  description: 'Best-effort OpenAPI 3.1 description of Cloudflare AI Gateway, covering
+
+    the unified provider proxy endpoint at gateway.ai.cloudflare.com and the
+
+    management plane under api.cloudflare.com/client/v4/accounts/{account_id}/ai-gateway.
+
+    The proxy forwards LLM calls in each provider''s native format and applies
+
+    analytics, caching, rate limiting, retries, fallback, and guardrails. The
+
+    management API lists, creates, updates, and deletes gateways and reads
+
+    request logs.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Cloudflare AI Gateway
+    url: https://developers.cloudflare.com/ai-gateway/
+servers:
+- url: https://api.cloudflare.com/client/v4
+  description: Cloudflare REST API (management plane)
+- url: https://gateway.ai.cloudflare.com
+  description: AI Gateway proxy plane
+security:
+- bearerAuth: []
+tags:
+- name: Proxy
+paths:
+  /v1/{account_id}/{gateway_id}/{provider}:
+    parameters:
+    - $ref: '#/components/parameters/AccountId'
+    - $ref: '#/components/parameters/GatewayId'
+    - in: path
+      name: provider
+      required: true
+      schema:
+        type: string
+        enum:
+        - openai
+        - anthropic
+        - google-ai-studio
+        - google-vertex-ai
+        - aws-bedrock
+        - azure-openai
+        - workers-ai
+        - mistral
+        - cohere
+        - groq
+        - deepseek
+        - cerebras
+        - xai
+        - perplexity-ai
+        - replicate
+        - huggingface
+        - openrouter
+        - elevenlabs
+        - deepgram
+        - cartesia
+        - ideogram
+        - fal-ai
+        - baseten
+        - parallel
+    post:
+      summary: Proxy a request to a single AI provider
+      description: 'Accepts the provider''s native request shape and forwards it through
+
+        AI Gateway. The remainder of the upstream path is appended after the
+
+        provider segment (e.g. /v1/{account}/{gateway}/openai/chat/completions).
+
+        '
+      operationId: proxyProviderRequest
+      tags:
+      - Proxy
+      responses:
+        '200':
+          description: Provider response, proxied through AI Gateway
+  /v1/{account_id}/{gateway_id}:
+    parameters:
+    - $ref: '#/components/parameters/AccountId'
+    - $ref: '#/components/parameters/GatewayId'
+    post:
+      summary: Unified AI Gateway request (universal endpoint)
+      description: 'Accepts a JSON body that selects the provider and model and forwards
+
+        the request, applying fallback across providers if configured.
+
+        '
+      operationId: unifiedProxyRequest
+      tags:
+      - Proxy
+      responses:
+        '200':
+          description: Unified gateway response
+components:
+  parameters:
+    GatewayId:
+      in: path
+      name: gateway_id
+      required: true
+      schema:
+        type: string
+    AccountId:
+      in: path
+      name: account_id
+      required: true
+      schema:
+        type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'Cloudflare API token with AI Gateway Read/Edit (and Workers AI Read
+
+        when applicable) permissions, passed as `Authorization: Bearer <token>`.
+
+        '

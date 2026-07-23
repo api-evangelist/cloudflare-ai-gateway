@@ -1,0 +1,67 @@
+openapi: 3.1.0
+info:
+  title: Cloudflare AI Gateway Gateways Logs API
+  description: 'Best-effort OpenAPI 3.1 description of Cloudflare AI Gateway, covering
+
+    the unified provider proxy endpoint at gateway.ai.cloudflare.com and the
+
+    management plane under api.cloudflare.com/client/v4/accounts/{account_id}/ai-gateway.
+
+    The proxy forwards LLM calls in each provider''s native format and applies
+
+    analytics, caching, rate limiting, retries, fallback, and guardrails. The
+
+    management API lists, creates, updates, and deletes gateways and reads
+
+    request logs.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Cloudflare AI Gateway
+    url: https://developers.cloudflare.com/ai-gateway/
+servers:
+- url: https://api.cloudflare.com/client/v4
+  description: Cloudflare REST API (management plane)
+- url: https://gateway.ai.cloudflare.com
+  description: AI Gateway proxy plane
+security:
+- bearerAuth: []
+tags:
+- name: Logs
+paths:
+  /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/logs:
+    parameters:
+    - $ref: '#/components/parameters/AccountId'
+    - $ref: '#/components/parameters/GatewayId'
+    get:
+      summary: List request logs for an AI Gateway
+      operationId: listAiGatewayLogs
+      tags:
+      - Logs
+      responses:
+        '200':
+          description: List of logs
+components:
+  parameters:
+    GatewayId:
+      in: path
+      name: gateway_id
+      required: true
+      schema:
+        type: string
+    AccountId:
+      in: path
+      name: account_id
+      required: true
+      schema:
+        type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'Cloudflare API token with AI Gateway Read/Edit (and Workers AI Read
+
+        when applicable) permissions, passed as `Authorization: Bearer <token>`.
+
+        '
