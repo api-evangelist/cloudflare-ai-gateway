@@ -1,0 +1,75 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Cloudflare AI Gateway Gateways Proxy API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Proxy",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Proxy a request to a single AI provider",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.cloudflare.com/client/v4/v1/:account_id/:gateway_id/:provider",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "gateway_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "provider",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Accepts the provider's native request shape and forwards it through\nAI Gateway. The remainder of the upstream path is appended after the\nprovider segment (e.g. /v1/{account}/{gateway}/openai/chat/completions).\n"
+        },
+        {
+          "info": {
+            "name": "Unified AI Gateway request (universal endpoint)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.cloudflare.com/client/v4/v1/:account_id/:gateway_id",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "gateway_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Accepts a JSON body that selects the provider and model and forwards\nthe request, applying fallback across providers if configured.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

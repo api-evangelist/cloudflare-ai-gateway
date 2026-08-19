@@ -1,0 +1,261 @@
+{
+  "item": [
+    {
+      "id": "eef74f5e-8798-4896-99d4-af311c0f6e6b",
+      "name": "Proxy",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b805a25f-bb30-453b-995a-fc9be2d048b6",
+          "name": "Proxy a request to a single AI provider",
+          "request": {
+            "name": "Proxy a request to a single AI provider",
+            "description": {
+              "content": "Accepts the provider's native request shape and forwards it through\nAI Gateway. The remainder of the upstream path is appended after the\nprovider segment (e.g. /v1/{account}/{gateway}/openai/chat/completions).\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                ":account_id",
+                ":gateway_id",
+                ":provider"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "account_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "gateway_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "provider",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9a0b6f57-2c2a-4b8c-a814-c97cf6cde6ea",
+              "name": "Provider response, proxied through AI Gateway",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    ":account_id",
+                    ":gateway_id",
+                    ":provider"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "account_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "gateway_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provider",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "73e17ab1-2594-42a3-913f-f576b81000ce",
+          "name": "Unified AI Gateway request (universal endpoint)",
+          "request": {
+            "name": "Unified AI Gateway request (universal endpoint)",
+            "description": {
+              "content": "Accepts a JSON body that selects the provider and model and forwards\nthe request, applying fallback across providers if configured.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                ":account_id",
+                ":gateway_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "account_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "gateway_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4aa7c80d-e739-47ac-9a16-57ed89734ee8",
+              "name": "Unified gateway response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    ":account_id",
+                    ":gateway_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "account_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "gateway_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.cloudflare.com/client/v4",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "57762204-07f3-4c61-a59c-280a908a49eb",
+    "name": "Cloudflare AI Gateway Gateways Proxy API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Best-effort OpenAPI 3.1 description of Cloudflare AI Gateway, covering\nthe unified provider proxy endpoint at gateway.ai.cloudflare.com and the\nmanagement plane under api.cloudflare.com/client/v4/accounts/{account_id}/ai-gateway.\nThe proxy forwards LLM calls in each provider's native format and applies\nanalytics, caching, rate limiting, retries, fallback, and guardrails. The\nmanagement API lists, creates, updates, and deletes gateways and reads\nrequest logs.\n\n\nContact Support:\n Name: Cloudflare AI Gateway",
+      "type": "text/plain"
+    }
+  }
+}
