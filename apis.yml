@@ -67,6 +67,10 @@ apis:
   humanURL: https://developers.cloudflare.com/ai-gateway/
   baseURL: https://gateway.ai.cloudflare.com
   tags:
+  - Unified-API
+  - LLM
+  - Multi-Provider
+  tags_raw:
   - Unified API
   - LLM
   - Multi-Provider
