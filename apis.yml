@@ -8,6 +8,18 @@ description: Cloudflare AI Gateway is a managed LLM proxy that sits in front of 
   with Workers AI, the Secrets Store, and Cloudflare CASB's Claude Compliance API support. This is a standalone product profile;
   the broader Cloudflare provider profile lives at github.com/api-evangelist/cloudflare.
 type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: free
   onboarding: self-serve
