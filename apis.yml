@@ -152,6 +152,8 @@ apis:
   - type: OpenAPI
     url: openapi/cloudflare-ai-gateway-proxy-api-openapi.yml
 common:
+- type: Website
+  url: https://www.cloudflare.com/
 - type: AgenticAccess
   url: agentic-access/cloudflare-ai-gateway-agentic-access.yml
 - type: VulnerabilityDisclosure
