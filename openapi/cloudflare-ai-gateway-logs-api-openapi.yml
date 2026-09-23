@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Cloudflare AI Gateway Gateways Logs API
+  title: Cloudflare AI Gateway Logs API
   description: 'Best-effort OpenAPI 3.1 description of Cloudflare AI Gateway, covering
 
     the unified provider proxy endpoint at gateway.ai.cloudflare.com and the
@@ -13,9 +13,7 @@ info:
 
     management API lists, creates, updates, and deletes gateways and reads
 
-    request logs.
-
-    '
+    request logs.'
   version: 1.0.0
   contact:
     name: Cloudflare AI Gateway

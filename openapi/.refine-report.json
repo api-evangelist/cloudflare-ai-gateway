@@ -1,9 +1,7 @@
 {
   "provider": "cloudflare-ai-gateway",
   "sources": [
-    "cloudflare-ai-gateway-gateways-api-openapi.yml",
-    "cloudflare-ai-gateway-logs-api-openapi.yml",
-    "cloudflare-ai-gateway-proxy-api-openapi.yml"
+    "_original/cloudflare-ai-gateway-openapi.yml"
   ],
   "outputs": [
     "cloudflare-ai-gateway-gateways-api-openapi.yml",
@@ -13,6 +11,17 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "cloudflare-ai-gateway-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "cloudflare-ai-gateway-openapi.yml: declared missing tag: Gateways",
+    "cloudflare-ai-gateway-openapi.yml: declared missing tag: Logs",
+    "cloudflare-ai-gateway-openapi.yml: declared missing tag: Proxy",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "cloudflare-ai-gateway-gateways-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "cloudflare-ai-gateway-logs-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "cloudflare-ai-gateway-proxy-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
