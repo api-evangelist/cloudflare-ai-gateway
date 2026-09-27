@@ -42,15 +42,15 @@ paths:
           description: List of logs
 components:
   parameters:
-    GatewayId:
-      in: path
-      name: gateway_id
-      required: true
-      schema:
-        type: string
     AccountId:
       in: path
       name: account_id
+      required: true
+      schema:
+        type: string
+    GatewayId:
+      in: path
+      name: gateway_id
       required: true
       schema:
         type: string

@@ -79,13 +79,14 @@ apis:
   humanURL: https://developers.cloudflare.com/ai-gateway/
   baseURL: https://gateway.ai.cloudflare.com
   tags:
-  - Unified-API
+  - Unified API
   - LLM
   - Multi-Provider
   tags_raw:
   - Unified API
   - LLM
   - Multi-Provider
+  - Unified-API
   properties:
   - type: Documentation
     url: https://developers.cloudflare.com/ai-gateway/
@@ -113,6 +114,9 @@ apis:
     MCP-compatible AI agents.
   humanURL: https://ai-gateway.mcp.cloudflare.com/mcp
   tags:
+  - MCP
+  - AI Agents
+  tags_raw:
   - MCP
   - Agentic AI
   properties:
