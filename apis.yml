@@ -153,6 +153,10 @@ apis:
   - type: OpenAPI
     url: openapi/cloudflare-ai-gateway-proxy-api-openapi.yml
 common:
+- type: RateLimits
+  url: rate-limits/cloudflare-ai-gateway-rate-limits.yml
+- type: FinOps
+  url: finops/cloudflare-ai-gateway-finops.yml
 - type: Plans
   url: plans/cloudflare-ai-gateway-plans-pricing.yml
 - type: Website
