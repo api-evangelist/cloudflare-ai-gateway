@@ -1,52 +1,184 @@
-specification: API Commons Plans
-specificationVersion: '0.1'
-schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
-provider: Cloudflare AI Gateway
-providerId: cloudflare-ai-gateway
-created: '2026-05-22'
-modified: '2026-05-22'
-tags:
-- AI Gateway
-- LLM
-- Observability
-- Caching
-- Rate Limiting
-- Workers AI
-- Cloudflare
-description: Machine-readable plans scaffold for the Cloudflare AI Gateway API surface. Conforms to the API Commons Plans
-  schema. Tier limits and prices are scaffold defaults; replace with provider-published values.
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-07'
+method: searched
+source: https://www.cloudflare.com/plans/
+sources:
+- https://www.cloudflare.com/plans/
+provenance:
+  tool: all/0-working/economics/harvest_pricing.py
+  run: 20261007T104522
+  grounding: every price_text was found verbatim in the fetched page text
+audience: developer-api
+pricing_basis: tiered-subscription
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-07'
+published: true
+note: Cloudflare's general plans page; lists application plan tiers, Zero Trust tiers, and per-unit developer
+  platform pricing. AI Gateway is listed as a product but no specific AI Gateway price is shown on this
+  page.
+plan_count: 10
+currency: USD
 plans:
-- id: cloudflare-ai-gateway-free
-  name: Free
-  type: freemium
-  description: Free entry tier for the Cloudflare AI Gateway API surface. Intended for evaluation, prototyping, and low-volume
-    integrations. Real limits and pricing must be reconciled with the provider's published plan documentation.
-  entries:
-  - label: API Requests
-    description: Monthly API request quota across all included endpoints
-    name: api_requests
-    type: quota
-    metric: requests
-    limit: 1000
-    timeFrame: month
-    geo: global
-    domains:
-    - https://gateway.ai.cloudflare.com
-    unit: 1
-    price: '0.00'
-    userMultiplied: false
-  - label: Rate Limit
-    description: Maximum requests per minute on the free tier
-    name: rate_limit
-    type: rate
-    metric: requests_per_minute
-    limit: 10
-    timeFrame: minute
-    geo: global
-    domains:
-    - https://gateway.ai.cloudflare.com
-    unit: 1
-    price: '0.00'
-references:
-- name: Cloudflare AI Gateway API Documentation
-  url: https://raw.githubusercontent.com/api-evangelist/cloudflare-ai-gateway/refs/heads/main/apis.yml
+- name: Free
+  price_text: $0 /month
+  price: 0
+  currency: USD
+  period: month
+  unit: plan
+  included_quota: For personal or hobby projects that aren't business-critical.
+- name: Pro
+  price_text: $20 /mo billed annually, or $25/mo billed monthly
+  currency: USD
+  period: month
+  unit: plan
+  included_quota: For professional websites that aren't business-critical.
+- name: Business
+  price_text: $200 /mo billed annually, or $250/mo billed monthly
+  currency: USD
+  period: month
+  unit: plan
+  included_quota: For small businesses operating online.
+- name: Contract
+  price_text: Custom
+  period: none
+  included_quota: Billed annually
+- name: Zero Trust Free
+  price_text: $0 forever
+  price: 0
+  currency: USD
+  period: none
+  unit: plan
+  included_quota: Teams under 50 users; 50 users limit
+- name: Zero Trust Pay-as-you-go
+  price_text: $7 /user/month
+  price: 7
+  currency: USD
+  period: month
+  unit: user
+  included_quota: No user limit
+- name: Workers Requests
+  price_text: $0.30 / million requests
+  price: 0.3
+  currency: USD
+  period: per-use
+  unit: million requests
+  included_quota: 100k / day free
+- name: Workers AI Neurons
+  price_text: $0.011 / thousand neurons
+  price: 0.011
+  currency: USD
+  period: per-use
+  unit: thousand neurons
+  included_quota: 10,000 neurons / day free
+- name: R2 Standard Storage
+  price_text: $0.015 / GB-month
+  price: 0.015
+  currency: USD
+  period: month
+  unit: GB
+  included_quota: 10 GB-month free
+- name: Log Explorer add-on
+  price_text: $1/GB ingested; first 10 GB free
+  currency: USD
+  period: per-use
+  unit: GB ingested
+  included_quota: first 10 GB free
+rate_limit_statements:
+- User Limit Free 50 users
+- Requests Free 100k / day
+- Read Requests 100,000 / day
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - free
+  - hybrid
+  - metered
+  - seat
+  - subscription
+  units:
+  - data
+  - request
+  - seat
+  plans:
+  - name: Free
+    access: other
+    model: free
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: Pro
+    access: other
+    model: unstated
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: Business
+    access: other
+    model: unstated
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: Contract
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods:
+    - none
+  - name: Zero Trust Free
+    access: other
+    model: free
+    model_how: derived
+    units:
+    - other
+    periods:
+    - none
+  - name: Zero Trust Pay-as-you-go
+    access: other
+    model: seat
+    model_how: derived
+    units:
+    - seat
+    periods:
+    - month
+  - name: Workers Requests
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - request
+    periods:
+    - other
+  - name: Workers AI Neurons
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: R2 Standard Storage
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - data
+    periods:
+    - month
+  - name: Log Explorer add-on
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - data
+    periods:
+    - other
