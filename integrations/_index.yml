@@ -113,10 +113,10 @@
   relationship: system-coverage
   status: not-a-workflow
   arazzo: null
-- slug: cloudflare-ai-gateway-gemini
-  label: gemini
-  partner: gemini
-  partner_name: gemini
+- slug: cloudflare-ai-gateway-google-gemini
+  label: google-gemini
+  partner: google-gemini
+  partner_name: google-gemini
   type: coverage
   channel: provider-built
   evidence: https://github.com/cloudflare/cloudflare-docs/blob/production/src/content/docs/ai-gateway/usage/providers/google-ai-studio.mdx

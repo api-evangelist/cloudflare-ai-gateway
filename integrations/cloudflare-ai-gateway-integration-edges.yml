@@ -179,8 +179,8 @@ edges:
   matched_by: verified-token-table
   detected_by: sweep-model-routing.py
   first_seen: '2026-10-13'
-- partner_name: gemini
-  partner: gemini
+- partner_name: google-gemini
+  partner: google-gemini
   partner_match: verified-token
   channel: provider-built
   direction: provider-built
