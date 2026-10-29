@@ -1,4 +1,4 @@
-# Cloudflare AI Gateway (cloudflare-ai-gateway)
+# Cloudflare AI Gateway
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,135 +66,139 @@
 
 Cloudflare AI Gateway is a managed LLM proxy that sits in front of 23+ AI providers (OpenAI, Anthropic, Google AI Studio, Google Vertex AI, Amazon Bedrock, Azure OpenAI, Workers AI, Mistral, Cohere, Groq, DeepSeek, Cerebras, xAI, Perplexity, Replicate, HuggingFace, OpenRouter, ElevenLabs, Deepgram, Cartesia, Ideogram, Fal AI, Baseten, Parallel) and provides analytics, request and error logging, response caching, rate limiting, request retries, model fallback, guardrails, and evaluations. A unified REST API launched May 21, 2026 lets developers call any model through a single endpoint. The gateway integrates with Workers AI, the Secrets Store, and Cloudflare CASB's Claude Compliance API support. This is a standalone product profile; the broader Cloudflare provider profile lives at github.com/api-evangelist/cloudflare.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/cloudflare-ai-gateway/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/cloudflare-ai-gateway/refs/heads/main/apis.yml)
+**Areas:** AI Gateway · LLM · Observability · Caching · Rate Limiting · Workers AI · Cloudflare
 
-## Scope
+## Cloudflare AI Gateway on APIs.io
 
-- **Type:** Index
+Everything profiled for Cloudflare AI Gateway is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/cloudflare-ai-gateway/](https://apis.io/providers/cloudflare-ai-gateway/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (7)
 
-- AI Gateway
-- LLM
-- Observability
-- Caching
-- Rate Limiting
-- Workers AI
-- Cloudflare
+- [Cloudflare AI Gateway Proxy](https://apis.io/apis/cloudflare-ai-gateway/cloudflare-ai-gateway-proxy/) — The AI Gateway proxy endpoint accepts requests in each provider's native API format and forwards them through Cloudflare's edge with analytics, caching,…
+- [Cloudflare AI Gateway Unified REST API](https://apis.io/apis/cloudflare-ai-gateway/cloudflare-ai-gateway-unified-api/) — Unified REST API launched May 21, 2026 that lets developers call any supported model through a single endpoint instead of formatting requests for each…
+- [Cloudflare AI Gateway Management API](https://apis.io/apis/cloudflare-ai-gateway/cloudflare-ai-gateway-management-api/) — The Cloudflare API surface for managing AI Gateway resources — creating gateways, listing them, retrieving request logs, and configuring caching, rate…
+- [AI Gateway MCP Server](https://apis.io/apis/cloudflare-ai-gateway/ai-gateway-mcp/) — Cloudflare-hosted remote MCP server that exposes AI Gateway control-plane operations to MCP-compatible AI agents.
+- [Cloudflare AI Gateway Gateways API](https://apis.io/apis/cloudflare-ai-gateway/cloudflare-ai-gateway-gateways-api/) — The Gateways API from Cloudflare AI Gateway — 2 operation(s) for gateways.
+- [Cloudflare AI Gateway Logs API](https://apis.io/apis/cloudflare-ai-gateway/cloudflare-ai-gateway-logs-api/) — The Logs API from Cloudflare AI Gateway — 1 operation(s) for logs.
+- [Cloudflare AI Gateway Proxy API](https://apis.io/apis/cloudflare-ai-gateway/cloudflare-ai-gateway-proxy-api/) — The Proxy API from Cloudflare AI Gateway — 2 operation(s) for proxy.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-05-23
-- **Modified:** 2026-05-23
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### MCP servers (1)
 
-### Cloudflare AI Gateway Proxy
+Model Context Protocol servers that expose the API to agents.
 
-The AI Gateway proxy endpoint accepts requests in each provider's native API format and forwards them through Cloudflare's edge with analytics, caching, retries, rate limiting, fallback, and guardrails applied. URL pattern is https://gateway.ai.cloudflare.com/v1/{account_id}/{gateway_id}/{provider}. Authentication uses a Cloudflare API token with AI Gateway Read/Edit and Workers AI Read permissions; provider credentials can be sent as headers (BYOK) or stored via Unified Billing.
+- [mcp](https://apis.io/servers/cloudflare-ai-gateway/mcp/)
 
-- **Human URL:** [https://developers.cloudflare.com/ai-gateway/](https://developers.cloudflare.com/ai-gateway/)
-- **Base URL:** `https://gateway.ai.cloudflare.com`
+#### Agentic access (1)
 
-#### Tags
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- LLM Proxy
-- REST API
-- Multi-Provider
+- [Cloudflare Ai Gateway Agentic Access](https://apis.io/agentic-access/cloudflare-ai-gateway/cloudflare-ai-gateway-agentic-access/)
 
-#### Properties
+#### Collections (4)
 
+Postman and Open Collection request collections.
+
+- [Cloudflare AI Gateway API](https://apis.io/collections/cloudflare-ai-gateway/open-cloudflare-ai-gateway/)
+- [Cloudflare AI Gateway Gateways API](https://apis.io/collections/cloudflare-ai-gateway/open-cloudflare-ai-gateway-gateways-api/)
+- [Cloudflare AI Gateway Gateways Logs API](https://apis.io/collections/cloudflare-ai-gateway/open-cloudflare-ai-gateway-logs-api/)
+- [Cloudflare AI Gateway Gateways Proxy API](https://apis.io/collections/cloudflare-ai-gateway/open-cloudflare-ai-gateway-proxy-api/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Cloudflare Ai Gateway Authentication](https://apis.io/security/cloudflare-ai-gateway/cloudflare-ai-gateway-authentication/)
+- [Cloudflare Ai Gateway Domain Security](https://apis.io/security/cloudflare-ai-gateway/cloudflare-ai-gateway-domain-security/)
+- [Cloudflare Ai Gateway Vulnerability Disclosure](https://apis.io/security/cloudflare-ai-gateway/cloudflare-ai-gateway-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Cloudflare Ai Gateway Plans Pricing](https://apis.io/plans/cloudflare-ai-gateway/cloudflare-ai-gateway-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Cloudflare Ai Gateway Rate Limits](https://apis.io/rate-limits/cloudflare-ai-gateway/cloudflare-ai-gateway-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Cloudflare Ai Gateway Finops](https://apis.io/finops/cloudflare-ai-gateway/cloudflare-ai-gateway-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.cloudflare.com/)
 - [Documentation](https://developers.cloudflare.com/ai-gateway/)
-- [Getting Started](https://developers.cloudflare.com/ai-gateway/get-started/)
-- [API Reference](https://developers.cloudflare.com/ai-gateway/usage/providers/)
-- [Authentication](https://developers.cloudflare.com/ai-gateway/get-started/)
-- [Postman Collection](collections/cloudflare-ai-gateway.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cloudflare-ai-gateway.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Cloudflare AI Gateway Unified REST API
-
-Unified REST API launched May 21, 2026 that lets developers call any supported model through a single endpoint instead of formatting requests for each provider individually. Sits alongside the provider-native proxy mode and uses the same gateway routing, caching, observability, and guardrails.
-
-- **Human URL:** [https://developers.cloudflare.com/ai-gateway/](https://developers.cloudflare.com/ai-gateway/)
-- **Base URL:** `https://gateway.ai.cloudflare.com`
-
-#### Tags
-
-- Unified API
-- LLM
-- Multi-Provider
-
-#### Properties
-
-- [Documentation](https://developers.cloudflare.com/ai-gateway/)
-- [API Reference](https://developers.cloudflare.com/ai-gateway/usage/providers/)
-- [Postman Collection](collections/cloudflare-ai-gateway.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cloudflare-ai-gateway.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Cloudflare AI Gateway Management API
-
-The Cloudflare API surface for managing AI Gateway resources — creating gateways, listing them, retrieving request logs, and configuring caching, rate limiting, and authentication. Exposed under the standard Cloudflare REST API at api.cloudflare.com.
-
-- **Human URL:** [https://developers.cloudflare.com/api/resources/ai_gateway/](https://developers.cloudflare.com/api/resources/ai_gateway/)
-- **Base URL:** `https://api.cloudflare.com`
-
-#### Tags
-
-- Management API
-- REST API
-- Configuration
-
-#### Properties
-
-- [Documentation](https://developers.cloudflare.com/api/resources/ai_gateway/)
-- [API Reference](https://developers.cloudflare.com/api/resources/ai_gateway/)
-- [Postman Collection](collections/cloudflare-ai-gateway.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cloudflare-ai-gateway.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### AI Gateway MCP Server
-
-Cloudflare-hosted remote MCP server that exposes AI Gateway control-plane operations to MCP-compatible AI agents.
-
-- **Human URL:** [https://ai-gateway.mcp.cloudflare.com/mcp](https://ai-gateway.mcp.cloudflare.com/mcp)
-
-#### Tags
-
-- MCP
-- Agentic AI
-
-#### Properties
-
-- [M C P Server](https://ai-gateway.mcp.cloudflare.com/mcp)
-- [Postman Collection](collections/cloudflare-ai-gateway.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cloudflare-ai-gateway.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [Portal](https://developers.cloudflare.com/ai-gateway/)
-- [Documentation](https://developers.cloudflare.com/ai-gateway/)
-- [Getting Started](https://developers.cloudflare.com/ai-gateway/get-started/)
-- [API Reference](https://developers.cloudflare.com/ai-gateway/usage/providers/)
-- [Authentication](https://developers.cloudflare.com/fundamentals/api/get-started/create-token/)
+- [Getting started](https://developers.cloudflare.com/ai-gateway/get-started/)
+- [API reference](https://developers.cloudflare.com/ai-gateway/usage/providers/)
+- [Pricing](https://www.cloudflare.com/plans/)
+- [Support](https://support.cloudflare.com/)
 - [Changelog](https://developers.cloudflare.com/changelog/)
 - [Blog](https://blog.cloudflare.com/)
-- [Sign Up](https://dash.cloudflare.com/sign-up)
-- [Console](https://dash.cloudflare.com/)
-- [Pricing](https://www.cloudflare.com/plans/)
-- [SDK](https://github.com/cloudflare/cloudflare-typescript)
-- [SDK](https://github.com/cloudflare/cloudflare-python)
-- [SDK](https://github.com/cloudflare/cloudflare-go)
-- [C L I](https://developers.cloudflare.com/workers/wrangler/)
-- [M C P Server](https://ai-gateway.mcp.cloudflare.com/mcp)
-- [GitHub Organization](https://github.com/cloudflare)
-- [Status Page](https://www.cloudflarestatus.com/)
-- [Support](https://support.cloudflare.com/)
-- [Features](undefined)
-- [Use Cases](undefined)
-- [Integrations](undefined)
-- [L L Ms Txt](https://developers.cloudflare.com/llms.txt)
+- [GitHub](https://github.com/cloudflare)
+- [Status](https://www.cloudflarestatus.com/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
-**URL:** http://apievangelist.com
+**Kin Score 49.3** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 71.7 |
+| Contract quality | 30.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 50.0 |
+| Developer ergonomics | 88.1 |
+| Access clarity | 55.3 |
+
+**Agent readiness 42.7** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 16.4** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/cloudflare-ai-gateway/](https://apis.io/providers/cloudflare-ai-gateway/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Cloudflare AI Gateway: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/cloudflare-ai-gateway/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
